@@ -38,7 +38,7 @@ function draw() {
   pop();
   // einde tekenen JOS
   
-  // xJOS--;
+  xJOS--;
   // yJOS -= 2;
   
 }

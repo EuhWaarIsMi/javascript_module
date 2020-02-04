@@ -1,5 +1,6 @@
 var xJOS;
 var yJOS;
+var schaal;
 
 function setup() {
   var myCanvas = createCanvas(450,450);
@@ -13,15 +14,17 @@ function draw() {
   fill('black');
   text("xJOS: " + round(xJOS) + " (mouseX:" + round(mouseX) + ")",10,20);
   text("yJOS: " + round(yJOS) + " (mouseY:" + round(mouseY) + ")",260,20);
+  schaal = 0.1;
+  xJOS = constrain(mouseX,75*schaal,450-(75*schaal));
+  yJOS = constrain(mouseY,75*schaal,450-(75*schaal));
   
-  xJOS = constrain(mouseX,100,450);
   
-  scale(1);
-  translate(xJOS,225);
+  translate(xJOS,yJOS);
 
   // in de volgende regels wordt JOS getekend
 
   push();
+  scale(schaal);
   noStroke();
   fill('indianred');
   ellipse(0,0,150);
