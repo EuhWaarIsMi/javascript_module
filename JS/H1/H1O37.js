@@ -28,7 +28,11 @@ function tekenKamer(s) {
     noStroke();
     fill('black');
     rect(340,90,420,320);
+    fill('red');
+    ellipse(350,500,100);
+    ellipse(350,100,50);
     //
     translate(350,100);
+    tekenKamer(0.5);
 }
 

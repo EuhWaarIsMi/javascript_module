@@ -1,5 +1,6 @@
 var diameter = 400;
 var aantal = 0;
+var f = 0.75;
 
 function setup() {
     var myCanvas = createCanvas(1000,500);
@@ -20,8 +21,8 @@ function draw() {
 function tekenCirkel(x,y,D) {
     ellipse(x,y,D);
     aantal++;
-    if (D > 10) {
-        tekenCirkel(x,y,D*0.5);
-        
+    if (D > 5) {
+        tekenCirkel(x+f*D,y,D*f); 
+        tekenCirkel(x-f*D,y,D*f); 
     }
 }

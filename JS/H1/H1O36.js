@@ -1,10 +1,11 @@
-var aantalLagen = 5;
-var breedte = 90;
+var aantalLagen = 100;
+var breedte;
 var hoogte;
 
 function setup() {
-  hoogte = breedte/2;
-  var myCanvas = createCanvas(aantalLagen*breedte + 1,aantalLagen*hoogte + 1);
+  var myCanvas = createCanvas(900,450);
+  breedte = width/aantalLagen;
+  hoogte = breedte/2
   background('silver');
   fill('lightslategray');
   stroke('darkslategray');  
