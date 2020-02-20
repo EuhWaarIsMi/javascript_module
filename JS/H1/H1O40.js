@@ -1,4 +1,4 @@
-var N = 1;
+var N = 5;
 var grijstint = 0;
 
 var Tx,Ty,Lx,Ly,Rx,Ry;
@@ -43,12 +43,13 @@ function sierpinski(Tx,Ty,Lx,Ly,Rx,Ry,n) {
         var Cy = (Ly + Ry) / 2;
 
         sierpinski(Tx,Ty,Ax,Ay,Bx,By,n - 1);
-        // 
-        // 
+        sierpinski(Ax,Ay,Lx,Ly,Cx,Cy,n - 1);
+        sierpinski(Bx,By,Cx,Cy,Rx,Ry,n - 1); 
     }
     else {
-        // veranderKleur();
-        grijstint += 9;        
+        veranderKleur();
+        grijstint += 9;
+        kiesKleur();        
         triangle(Tx,Ty,Lx,Ly,Rx,Ry);
     }
 }
@@ -56,4 +57,12 @@ function sierpinski(Tx,Ty,Lx,Ly,Rx,Ry,n) {
 function veranderKleur(tint) {
     var x = grijstint;
     fill(x);    
+}
+
+function kiesKleur() {
+    var R = random(0,255);
+    var G = random(0,255);
+    var B = random(0,255);
+
+    fill(R,G,B);
 }
